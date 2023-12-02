@@ -1,7 +1,6 @@
-from tkinter import messagebox, filedialog
-import pytube
-import pytube as yt
 import tkinter as tk
+from tkinter import messagebox, filedialog
+import pytube as yt
 
 # Creating window
 window = tk.Tk()
@@ -38,8 +37,8 @@ def download():
             messagebox.showinfo("Download finished.", "Video downloaded successfully.")
         else:
             messagebox.showinfo("Error", "Please select a download directory.")
-    except:
-        messagebox.showinfo("Error", "Unexpected error, please try again.")
+    except Exception as e:
+        messagebox.showinfo("Error", f"Unexpected error:, {str(e)}.")
 
 # Creating download button
 download_button = tk.Button(window, text="DOWNLOAD", command=download)
