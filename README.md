@@ -21,10 +21,11 @@ Make sure you have the following dependencies installed:
 - Tkinter
 - Pytube
 
-You can install Pytube using the following command:
+You can install Pytube and Tkinter using the following command:
 
 ```bash
 pip install pytube
+pip install tk
 ```
 
 ## Contributing
