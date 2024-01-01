@@ -33,12 +33,18 @@ def download():
         download_directory = entry_directory.get()
 
         if download_directory:
-            video.streams[0].download(download_directory)
+            # Get the stream with the highest resolution
+            video_stream = video.streams.get_highest_resolution()
+
+            # Download the video
+            video_stream.download(download_directory)
+
             messagebox.showinfo("Download finished.", "Video downloaded successfully.")
         else:
             messagebox.showinfo("Error", "Please select a download directory.")
     except Exception as e:
-        messagebox.showinfo("Error", f"Unexpected error:, {str(e)}.")
+        messagebox.showinfo("Error", f"Unexpected error: {str(e)}")
+
 
 # Creating download button
 download_button = tk.Button(window, text="DOWNLOAD", command=download)
